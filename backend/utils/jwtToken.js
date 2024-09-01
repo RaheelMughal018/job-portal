@@ -1,4 +1,6 @@
 export const sendToken = async (user, statusCode, res, message) => {
+  console.log("user: " + user);
+
   const token = user.getJWTToken();
   const options = {
     expires: new Date(
@@ -6,8 +8,6 @@ export const sendToken = async (user, statusCode, res, message) => {
     ),
     httpOnly: true,
   };
-  user.token = token;
-  await user.save();
   res.status(statusCode).cookie("token", token, options).json({
     success: true,
     message: message,

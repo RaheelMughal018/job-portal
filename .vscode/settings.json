@@ -21,5 +21,7 @@
     },
     "peacock.color": "#4B3621",
     "terminal.integrated.fontFamily": "Source Code Pro, 'Courier New', monospace",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "turboConsoleLog.includeFileNameAndLineNum": true,
+    "turboConsoleLog.addSemicolonInTheEnd": true
 }
