@@ -64,7 +64,11 @@ export const getAllJobs = catchAsyncErrors(async (req, res, next) => {
         { description: { $regex: keyword, $options: "i" } },
       ],
     };
-    const jobs = await Job.find(query);
+    const jobs = await Job.find(query)
+      .populate({
+        path: "company",
+      })
+      .sort({ createdAt: -1 });
     if (!jobs) {
       return next(new ErrorHandler("No jobs found", 404));
     }

@@ -7,6 +7,7 @@ import { errorMiddleware } from "./middlewares/error.middleware.js";
 import userRoute from "./routes/user.routes.js";
 import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
+import applicationRoute from "./routes/applicants.route.js";
 import fileUpload from "express-fileupload";
 const app = express();
 
@@ -40,6 +41,7 @@ app.use(
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
+app.use("/api/v1/applications", applicationRoute);
 
 // Connect to MongoDB
 connectDB();
